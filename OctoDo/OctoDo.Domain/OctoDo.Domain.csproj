@@ -19,21 +19,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Platforms\**" />
-	  <EmbeddedResource Remove="Platforms\**" />
-	  <MauiCss Remove="Platforms\**" />
-	  <MauiXaml Remove="Platforms\**" />
-	  <None Remove="Platforms\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Commands\" />
-	  <Folder Include="DTOs\" />
-	  <Folder Include="Queries\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\OctoDo.Domain\OctoDo.Domain.csproj" />
+	  <Folder Include="Queries\ActivityQueries\" />
+	  <Folder Include="Queries\ToDoQueries\" />
 	</ItemGroup>
 
 </Project>
