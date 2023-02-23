@@ -61,4 +61,8 @@
 	  <Folder Include="Stores\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\OctoDo.EntityFramework\OctoDo.EntityFramework.csproj" />
+	</ItemGroup>
+
 </Project>

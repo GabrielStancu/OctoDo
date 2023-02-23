@@ -13,4 +13,8 @@
     <Folder Include="Queries\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OctoDo.Data\OctoDo.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
