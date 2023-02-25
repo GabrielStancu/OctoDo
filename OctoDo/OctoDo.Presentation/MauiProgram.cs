@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using OctoDo.Presentation.ServiceCollectionExtensions;
 
 namespace OctoDo.Presentation;
 
@@ -19,6 +21,19 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
+		// Pages
+		builder.Services.AddSingleton<MainPage>();
+
+		// Database
+        builder.Services.AddSqlite(ConnectionString());
+
+		// Commands and Queries
+		builder.Services.AddCommands();
+		builder.Services.AddQueries();
+
+        return builder.Build();
 	}
+
+    private static string ConnectionString() 
+        => Path.Combine(FileSystem.AppDataDirectory, "OctoDo.db");
 }
