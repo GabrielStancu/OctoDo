@@ -1,7 +1,6 @@
 ﻿namespace OctoDo.Domain.Models;
 public class Plan : ModelBase
 {
-    public IEnumerable<Activity?>? Activities { get; set; }
-    public IEnumerable<Routine?>? Routines { get; set; }
     public bool IsDisabled { get; set; }
+    public bool IsSelectedForToday { get; set; }
 }

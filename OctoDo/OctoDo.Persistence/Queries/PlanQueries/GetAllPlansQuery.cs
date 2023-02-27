@@ -1,4 +1,5 @@
-﻿using OctoDo.Domain.Models;
+﻿using AutoMapper;
+using OctoDo.Domain.Models;
 using OctoDo.Domain.Queries.PlanQueries;
 using OctoDo.Persistence.DTOs;
 
@@ -7,24 +8,25 @@ namespace OctoDo.Persistence.Queries.PlanQueries;
 public class GetAllPlansQuery : IGetAllPlansQuery
 {
     private readonly DbContext _context;
+    private readonly IMapper _mapper;
 
-    public GetAllPlansQuery(DbContext context)
+    public GetAllPlansQuery(DbContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     public async Task<IEnumerable<Plan>> ExecuteAsync()
     {
-        await Task.Delay(10);
+        var  plans = Enumerable.Empty<Plan>();
 
-        var plans = _context.Connection.Table<PlanDto>()
-            .ToList().Select(dto => new Plan
-            {
-                Id = dto.Id,
-                Name = dto.Name,
-                IsDisabled = dto.IsDisabled,
-                Description = dto.Description
-            });
+        await Task.Run(() =>
+        {
+            plans = _context.Database
+                .Table<PlanDto>()
+                .Select(_mapper.Map<PlanDto, Plan>);
+        });
+        
 
         return plans;
     }

@@ -8,5 +8,7 @@ public static class CommandsExtensions
     public static void AddCommands(this IServiceCollection services)
     {
         services.AddScoped<ICreatePlanCommand, CreatePlanCommand>();
+        services.AddScoped<IUpdatePlanCommand, UpdatePlanCommand>();
+        services.AddScoped<IDisablePlanCommand, DisablePlanCommand>();
     }
 }

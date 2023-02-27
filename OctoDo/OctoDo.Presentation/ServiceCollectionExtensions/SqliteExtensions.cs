@@ -6,6 +6,6 @@ public static class SqliteExtensions
 {
     public static void AddSqlite(this IServiceCollection services, string options)
     {
-        services.AddSingleton<DbContext>(_ => new DbContext(options));
+        services.AddSingleton(_ => new DbContext(options));
     }
 }

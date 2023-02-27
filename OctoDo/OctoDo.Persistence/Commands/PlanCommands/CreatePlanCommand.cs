@@ -1,4 +1,5 @@
-﻿using OctoDo.Domain.Commands.PlanCommands;
+﻿using AutoMapper;
+using OctoDo.Domain.Commands.PlanCommands;
 using OctoDo.Domain.Models;
 using OctoDo.Persistence.DTOs;
 
@@ -7,23 +8,22 @@ namespace OctoDo.Persistence.Commands.PlanCommands;
 public class CreatePlanCommand : ICreatePlanCommand
 {
     private readonly DbContext _context;
+    private readonly IMapper _mapper;
 
-    public CreatePlanCommand(DbContext context)
+    public CreatePlanCommand(DbContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
     public async Task<Plan> ExecuteAsync(Plan plan)
     {
-        await Task.Delay(10);
-
-        var planDto = new PlanDto
+        await Task.Run(() =>
         {
-            Name = plan.Name,
-            Description = plan.Description,
-            IsDisabled = plan.IsDisabled
-        };
+            var planDto = _mapper.Map<Plan, PlanDto>(plan);
+            _context.Database.Insert(planDto);
 
-        _context.Connection.Insert(planDto);
+            // TODO: check if there is no other plan with the same name already. If so, return null
+        });
 
         return plan;
     }

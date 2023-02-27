@@ -7,13 +7,13 @@ public class DbContext
 {
     public DbContext(string fileName)
     {
-        Connection ??= new SQLiteConnection("D:\\Projects\\OctoDo\\OctoDo\\OctoDo.db");
+        Database ??= new SQLiteConnection("D:\\Projects\\OctoDo\\OctoDo\\OctoDo.db");
 
-        Connection.CreateTable<ActivityDto>();
-        Connection.CreateTable<PlanDto>();
-        Connection.CreateTable<RoutineDto>();
-        Connection.CreateTable<ToDoDto>();
+        Database.CreateTable<ActivityDto>();
+        Database.CreateTable<PlanDto>();
+        Database.CreateTable<RoutineDto>();
+        Database.CreateTable<ToDoDto>();
     }
 
-    internal SQLiteConnection Connection { get; }
+    internal SQLiteConnection Database { get; }
 }

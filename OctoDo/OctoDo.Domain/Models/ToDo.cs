@@ -2,6 +2,6 @@
 public class ToDo : ModelBase
 {
     public int? Points { get; set; }
-    public Activity? Activity { get; set; }
-    public Routine? Routine { get; set; }
+    public int ActivityId { get; set; }
+    public int RoutineId { get; set; }
 }
