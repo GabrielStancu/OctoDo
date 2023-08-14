@@ -52,4 +52,9 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\OctoDo.Client.Core\OctoDo.Client.Core.csproj" />
+	  <ProjectReference Include="..\OctoDo.Client.Infrastructure\OctoDo.Client.Infrastructure.csproj" />
+	</ItemGroup>
+
 </Project>

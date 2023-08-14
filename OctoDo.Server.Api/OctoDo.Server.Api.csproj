@@ -15,4 +15,10 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OctoDo.Server.Application\OctoDo.Server.Application.csproj" />
+    <ProjectReference Include="..\OctoDo.Server.Contracts\OctoDo.Server.Contracts.csproj" />
+    <ProjectReference Include="..\OctoDo.Server.Infrastructure\OctoDo.Server.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

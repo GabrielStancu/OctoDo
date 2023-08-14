@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OctoDo.Server.Application\OctoDo.Server.Application.csproj" />
+  </ItemGroup>
+
 </Project>
