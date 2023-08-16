@@ -1,4 +1,5 @@
-﻿namespace OctoDo.Server.Application.Interfaces;
+﻿namespace OctoDo.Authentication.Api.Business.Jwt;
+
 public interface IJwtService
 {
     string CreateToken(string email);

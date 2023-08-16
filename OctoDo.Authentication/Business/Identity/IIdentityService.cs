@@ -1,6 +1,4 @@
-﻿using OctoDo.Server.Application.Authentication;
-
-namespace OctoDo.Server.Application.Interfaces;
+﻿namespace OctoDo.Authentication.Api.Business.Identity;
 
 public interface IIdentityService
 {

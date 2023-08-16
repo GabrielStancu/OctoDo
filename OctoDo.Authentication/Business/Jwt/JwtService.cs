@@ -2,9 +2,10 @@
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using OctoDo.Server.Application.Interfaces;
+using OctoDo.Authentication.Api.Business.Configuration;
 
-namespace OctoDo.Server.Infrastructure.Authentication;
+namespace OctoDo.Authentication.Api.Business.Jwt;
+
 public class JwtService : IJwtService
 {
     private readonly JwtSettings _jwtSettings;

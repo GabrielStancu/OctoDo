@@ -16,9 +16,8 @@ namespace OctoDo.Server.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Enabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -36,7 +35,8 @@ namespace OctoDo.Server.Infrastructure.Migrations
                     DaysOfWeek = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DaysOfMonth = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Month = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Year = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Year = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Enabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,7 +56,8 @@ namespace OctoDo.Server.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     RoutineId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Enabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -11,21 +11,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OctoDo.Scheduling", "OctoDo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OctoDo.Client", "OctoDo.Client", "{83C0B072-5DBE-4295-8A22-959C954FAE02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Server.Contracts", "OctoDo.Server.Contracts\OctoDo.Server.Contracts.csproj", "{5DE045D7-FC98-47EB-950B-175DC656C77F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Server.Contracts", "OctoDo.Server.Contracts\OctoDo.Server.Contracts.csproj", "{5DE045D7-FC98-47EB-950B-175DC656C77F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Server.Application", "OctoDo.Server.Application\OctoDo.Server.Application.csproj", "{2EA24B0F-D573-4F56-8EAA-3C95BFEFC795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Server.Application", "OctoDo.Server.Application\OctoDo.Server.Application.csproj", "{2EA24B0F-D573-4F56-8EAA-3C95BFEFC795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Server.Infrastructure", "OctoDo.Server.Infrastructure\OctoDo.Server.Infrastructure.csproj", "{2F78E10D-15DD-456D-B52E-35B03C7528B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Server.Infrastructure", "OctoDo.Server.Infrastructure\OctoDo.Server.Infrastructure.csproj", "{2F78E10D-15DD-456D-B52E-35B03C7528B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Server.Domain", "OctoDo.Server.Domain\OctoDo.Server.Domain.csproj", "{C89BAC7D-FD3F-4143-88BB-C6AFAF820D3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Server.Domain", "OctoDo.Server.Domain\OctoDo.Server.Domain.csproj", "{C89BAC7D-FD3F-4143-88BB-C6AFAF820D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Scheduling", "OctoDo.Scheduling\OctoDo.Scheduling.csproj", "{2C5C42DD-C02D-42E8-910E-3DA142981209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Scheduling", "OctoDo.Scheduling\OctoDo.Scheduling.csproj", "{2C5C42DD-C02D-42E8-910E-3DA142981209}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Client.Presentation", "OctoDo.Client.Presentation\OctoDo.Client.Presentation.csproj", "{F225C798-9093-444D-93B4-15B8958E555B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Client.Presentation", "OctoDo.Client.Presentation\OctoDo.Client.Presentation.csproj", "{F225C798-9093-444D-93B4-15B8958E555B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Client.Infrastructure", "OctoDo.Client.Infrastructure\OctoDo.Client.Infrastructure.csproj", "{EFEE5253-02C3-4BB8-9129-F02493EDDA0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Client.Infrastructure", "OctoDo.Client.Infrastructure\OctoDo.Client.Infrastructure.csproj", "{EFEE5253-02C3-4BB8-9129-F02493EDDA0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Client.Core", "OctoDo.Client.Core\OctoDo.Client.Core.csproj", "{ADD913EC-825B-4476-B230-57D591100F11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OctoDo.Client.Core", "OctoDo.Client.Core\OctoDo.Client.Core.csproj", "{ADD913EC-825B-4476-B230-57D591100F11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OctoDo.Authentication", "OctoDo.Authentication", "{5D3E1A62-4677-43EA-85B5-A9A2E4D1D6C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OctoDo.Authentication.Api", "OctoDo.Authentication\OctoDo.Authentication.Api.csproj", "{E655BB83-A53F-4975-BF06-FFFABF31CC8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,10 @@ Global
 		{ADD913EC-825B-4476-B230-57D591100F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD913EC-825B-4476-B230-57D591100F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD913EC-825B-4476-B230-57D591100F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E655BB83-A53F-4975-BF06-FFFABF31CC8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E655BB83-A53F-4975-BF06-FFFABF31CC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E655BB83-A53F-4975-BF06-FFFABF31CC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E655BB83-A53F-4975-BF06-FFFABF31CC8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,7 @@ Global
 		{F225C798-9093-444D-93B4-15B8958E555B} = {83C0B072-5DBE-4295-8A22-959C954FAE02}
 		{EFEE5253-02C3-4BB8-9129-F02493EDDA0D} = {83C0B072-5DBE-4295-8A22-959C954FAE02}
 		{ADD913EC-825B-4476-B230-57D591100F11} = {83C0B072-5DBE-4295-8A22-959C954FAE02}
+		{E655BB83-A53F-4975-BF06-FFFABF31CC8C} = {5D3E1A62-4677-43EA-85B5-A9A2E4D1D6C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F28DB38D-ED70-4B53-9C64-BCFBB6B718CB}

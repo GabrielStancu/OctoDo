@@ -1,7 +1,7 @@
-﻿using OctoDo.Server.Application.Authentication;
-using OctoDo.Server.Application.Interfaces;
+﻿using OctoDo.Authentication.Api.Business.Identity;
+using OctoDo.Authentication.Api.Business.Jwt;
 
-namespace OctoDo.Server.Application.Services;
+namespace OctoDo.Authentication.Api.Business.Authentication;
 public class AuthenticationService : IAuthenticationService
 {
     private readonly IIdentityService _identityService;
@@ -13,12 +13,12 @@ public class AuthenticationService : IAuthenticationService
         _jwtService = jwtService;
     }
 
-    public async Task<LoginResponse> LoginAsync(string email, string password)
+    public async Task<LoginResponseModel> LoginAsync(string email, string password)
     {
         var identityResponse = await _identityService.LoginAsync(email, password);
         if (!identityResponse.Succeeded)
         {
-            return new LoginResponse
+            return new LoginResponseModel
             {
                 Succeeded = false,
                 Email = string.Empty,
@@ -28,7 +28,7 @@ public class AuthenticationService : IAuthenticationService
         }
 
         var token = _jwtService.CreateToken(email);
-        return new LoginResponse
+        return new LoginResponseModel
         {
             Succeeded = true,
             Email = email,
@@ -37,11 +37,11 @@ public class AuthenticationService : IAuthenticationService
         };
     }
 
-    public async Task<RegisterResponse> RegisterAsync(string email, string password)
+    public async Task<RegisterResponseModel> RegisterAsync(string email, string password)
     {
         var identityResponse = await _identityService.RegisterAsync(email, password);
 
-        return new RegisterResponse
+        return new RegisterResponseModel
         {
             Succeeded = identityResponse.Succeeded,
             Error = identityResponse.Error

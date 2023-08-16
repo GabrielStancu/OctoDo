@@ -1,8 +1,4 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using OctoDo.Server.Application.Interfaces;
-using OctoDo.Server.Application.Services;
-using OctoDo.Server.Infrastructure.Authentication;
 using OctoDo.Server.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,13 +16,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connection));
 
-// Identity
-builder.Services.AddDbContext<AppIdentityDbContext>(options =>
-    options.UseSqlServer(connection));
-builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
-        options.SignIn.RequireConfirmedAccount = false;
-    }).AddEntityFrameworkStores<AppDbContext>();
-
 // Cors
 builder.Services.AddCors(opt => {
     opt.AddPolicy(name: "AllowOrigins", policy => {
@@ -37,12 +26,6 @@ builder.Services.AddCors(opt => {
 });
 
 // Services
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
-builder.Services.AddScoped<IIdentityService, IdentityService>();
-builder.Services.AddScoped<IJwtService, JwtService>();
-
-// Configurations
-builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
 var app = builder.Build();
 

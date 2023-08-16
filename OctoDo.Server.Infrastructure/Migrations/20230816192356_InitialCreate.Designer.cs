@@ -12,7 +12,7 @@ using OctoDo.Server.Infrastructure.Data;
 namespace OctoDo.Server.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230814195014_InitialCreate")]
+    [Migration("20230816192356_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -33,6 +33,9 @@ namespace OctoDo.Server.Infrastructure.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("RoutineId")
                         .HasColumnType("uniqueidentifier");
@@ -58,6 +61,9 @@ namespace OctoDo.Server.Infrastructure.Migrations
 
                     b.Property<string>("DaysOfWeek")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Month")
                         .HasColumnType("nvarchar(max)");
@@ -90,11 +96,8 @@ namespace OctoDo.Server.Infrastructure.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

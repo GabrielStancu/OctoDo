@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+
+    "Jwt:Key": "acebfda564fda572",
+    "Jwt:Issuer": "https://localhost:7121",
+
+    "Identity:ConnectionString": "Server=DESKTOP-Q2NITNF\\SQLEXPRESS;Database=OctoDo.IdentityDb;Trusted_Connection=True;TrustServerCertificate=true"
+  }
+}

@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using OctoDo.Server.Application.Authentication;
-using OctoDo.Server.Application.Interfaces;
-using OctoDo.Server.Infrastructure.Data;
+using OctoDo.Authentication.Api.Data;
 
-namespace OctoDo.Server.Infrastructure.Authentication;
+namespace OctoDo.Authentication.Api.Business.Identity;
 public class IdentityService : IIdentityService
 {
     private readonly UserManager<AppUser> _userManager;

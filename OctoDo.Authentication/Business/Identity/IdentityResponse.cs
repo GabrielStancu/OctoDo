@@ -1,4 +1,4 @@
-﻿namespace OctoDo.Server.Application.Authentication;
+﻿namespace OctoDo.Authentication.Api.Business.Identity;
 public class IdentityResponse
 {
     public bool Succeeded { get; set; }
