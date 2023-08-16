@@ -1,7 +1,7 @@
-﻿using OctoDo.Authentication.Business.Identity;
-using OctoDo.Authentication.Business.Jwt;
+﻿using OctoDo.Authentication.Api.Business.Identity;
+using OctoDo.Authentication.Api.Business.Jwt;
 
-namespace OctoDo.Authentication.Business.Authentication;
+namespace OctoDo.Authentication.Api.Business.Authentication;
 public class AuthenticationService : IAuthenticationService
 {
     private readonly IIdentityService _identityService;

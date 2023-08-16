@@ -24,12 +24,33 @@ public class Register
     public async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req)
     {
         _logger.LogInformation($"{nameof(Register)} received request.");
-        var request = JsonSerializer.Deserialize<AuthenticationRequest>(req.Body);
 
-        if (request is null || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+        try
+        {
+            var content = await req.ReadAsStringAsync() ?? string.Empty;
+            var request = JsonSerializer.Deserialize<AuthenticationRequest>(content);
+
+            if (request is null || string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Password))
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+
+            var response = await _authenticationService.RegisterAsync(request.Email, request.Password);
+
+            return CreateResponse(response);
+        }
+        catch (JsonException ex)
+        {
+            _logger.LogError($"JSON Error: {ex.InnerException?.Message ?? ex.Message} at {ex.StackTrace}");
             return new HttpResponseMessage(HttpStatusCode.BadRequest);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error: {ex.InnerException?.Message ?? ex.Message} at {ex.StackTrace}");
+            throw;
+        }
+    }
 
-        var response = await _authenticationService.RegisterAsync(request.Email, request.Password);
+    private static HttpResponseMessage CreateResponse(RegisterResponseModel response)
+    {
         if (!response.Succeeded)
         {
             return new HttpResponseMessage(HttpStatusCode.Unauthorized)
@@ -37,12 +58,11 @@ public class Register
                 Content = new StringContent(response.Error ?? string.Empty)
             };
         }
-            
+
         var responseJson = JsonSerializer.Serialize(response);
         return new HttpResponseMessage(HttpStatusCode.OK)
         {
             Content = new StringContent(responseJson, Encoding.UTF8, "application/json")
         };
-
     }
 }

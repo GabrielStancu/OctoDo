@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using OctoDo.Authentication.Data;
+using OctoDo.Authentication.Api.Data;
 
-namespace OctoDo.Authentication.Business.Identity;
+namespace OctoDo.Authentication.Api.Business.Identity;
 public class IdentityService : IIdentityService
 {
     private readonly UserManager<AppUser> _userManager;
@@ -53,15 +53,14 @@ public class IdentityService : IIdentityService
         // Register the user
         var user = new AppUser
         {
-            Email = email,
-            UserName = email
+            Email = email
         };
         var result = await _userManager.CreateAsync(user, password);
 
         return new RegisterIdentityResponse
         {
             Succeeded = result.Succeeded,
-            Error = result.Succeeded ? string.Empty : string.Join(';', result.Errors.Select(e => e.Description))
+            Error = result.Succeeded ? string.Empty : string.Join(';', result.Errors)
         };
     }
 }

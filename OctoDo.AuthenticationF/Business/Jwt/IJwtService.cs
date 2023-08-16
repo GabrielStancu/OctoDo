@@ -1,4 +1,4 @@
-﻿namespace OctoDo.Authentication.Business.Jwt;
+﻿namespace OctoDo.Authentication.Api.Business.Jwt;
 
 public interface IJwtService
 {

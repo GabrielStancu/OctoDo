@@ -1,4 +1,4 @@
-﻿namespace OctoDo.Authentication.Contracts;
+﻿namespace OctoDo.Server.Contracts.Authentication;
 
 public class LoginResponse
 {

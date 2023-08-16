@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OctoDo.Authentication.Contracts;
+namespace OctoDo.Server.Contracts.Authentication;
 public class AuthenticationRequest
 {
     [Required]

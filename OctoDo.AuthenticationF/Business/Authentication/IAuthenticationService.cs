@@ -1,4 +1,4 @@
-﻿namespace OctoDo.Authentication.Business.Authentication;
+﻿namespace OctoDo.Authentication.Api.Business.Authentication;
 
 public interface IAuthenticationService
 {

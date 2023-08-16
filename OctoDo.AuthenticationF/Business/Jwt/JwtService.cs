@@ -1,19 +1,18 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using OctoDo.Authentication.Business.Configuration;
+using OctoDo.Authentication.Api.Business.Configuration;
 
-namespace OctoDo.Authentication.Business.Jwt;
+namespace OctoDo.Authentication.Api.Business.Jwt;
 
 public class JwtService : IJwtService
 {
     private readonly JwtSettings _jwtSettings;
 
-    public JwtService(IOptions<JwtSettings> jwtSettings)
+    public JwtService(JwtSettings jwtSettings)
     {
-        _jwtSettings = jwtSettings.Value;
+        _jwtSettings = jwtSettings;
     }
 
     public string CreateToken(string email)

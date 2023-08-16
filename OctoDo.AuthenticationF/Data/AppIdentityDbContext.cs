@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace OctoDo.Authentication.Data;
+namespace OctoDo.Authentication.Api.Data;
 public class AppIdentityDbContext : IdentityDbContext<AppUser>
 {
     public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
