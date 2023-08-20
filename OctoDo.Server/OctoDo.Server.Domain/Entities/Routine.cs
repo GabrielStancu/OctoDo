@@ -3,6 +3,7 @@ public class Routine : BaseEntity
 {
     public User? User { get; set; }
     public string? Name { get; set; }
+    public string? Description { get; set; }
     public RecurrenceType RecurrenceType { get; set; }
     public string? DaysOfWeek { get; set; }
     public string? DaysOfMonth { get; set; }

@@ -2,5 +2,7 @@
 public class BaseEntity
 {
     public Guid Id { get; set; } = Guid.NewGuid();
-    public bool Enabled { get; set; }  = true;
+    public bool Disabled { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }
