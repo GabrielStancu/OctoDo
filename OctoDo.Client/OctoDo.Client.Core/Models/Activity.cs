@@ -1,5 +1,6 @@
-﻿namespace OctoDo.Server.Domain.Entities;
-public class Activity : BaseEntity
+﻿namespace OctoDo.Client.Core.Models;
+
+public class Activity
 {
     public string? Title { get; set; }
     public string? Description { get; set; }
@@ -9,4 +10,5 @@ public class Activity : BaseEntity
     public int DurationHours { get; set; }
     public int DurationMinutes { get; set; }
     public int DurationSeconds { get; set; }
+    public IEnumerable<ActivityStatus>? ActivityStatuses { get; set; }
 }
