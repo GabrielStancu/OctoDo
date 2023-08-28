@@ -1,6 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using OctoDo.Client.Infrastructure.Data;
+﻿using Microsoft.Extensions.Logging;
+using OctoDo.Client.Presentation.Utilities;
 
 namespace OctoDo.Client.Presentation;
 public static class MauiProgram
@@ -20,8 +19,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-        builder.Services.AddDbContext<AppDbContext>(options => 
-            options.UseSqlite("OctoDo.db"));
+        builder.Services.AddRepositories("OctoDo.db3");
 
         return builder.Build();
     }
