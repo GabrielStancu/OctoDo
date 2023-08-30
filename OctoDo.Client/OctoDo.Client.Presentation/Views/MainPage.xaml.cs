@@ -1,4 +1,4 @@
-﻿namespace OctoDo.Client.Presentation;
+﻿namespace OctoDo.Client.Presentation.Views;
 
 public partial class MainPage : ContentPage
 {

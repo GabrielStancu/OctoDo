@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:OctoDo.Client.Presentation.ViewModels"
+             x:Class="OctoDo.Client.Presentation.Views.UserInfoPage"
+             x:DataType="viewModel:UserInfoViewModel"
+             Title="{Binding Title}">
+    <Grid RowDefinitions="*, 1.5*"
+          RowSpacing="30"
+          Margin="0, 50, 0, 0">
+        <Image Source="logo.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               WidthRequest="350"
+               HeightRequest="350"/>
+
+        <Grid RowDefinitions="*, *, *, *" 
+              Grid.Row="1"
+              Margin="80, 0">
+            <Label Text="Let's get started!"
+                   Style="{StaticResource LargeLabel}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Row="0"
+                   FontSize="30"
+                   Margin="0, 0, 0, 30"/>
+            <Entry Placeholder="How should we call you?"
+                   Text="{Binding UserName}"
+                   VerticalOptions="Center"
+                   Grid.Row="1"
+                   WidthRequest="230"
+                   Style="{StaticResource MediumEntry}"
+                   HorizontalTextAlignment="Center"/>
+            <VerticalStackLayout Grid.Row="2">
+                <Label Style="{StaticResource MediumLabel}"
+                       Text="When should your day start?"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"/>
+                <TimePicker VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Time="{Binding DailyScheduleReset}"
+                            Format="HH:mm"
+                            Style="{StaticResource LargeTimePicker}"/>
+            </VerticalStackLayout>
+            
+            <Button Text="Confirm"
+                    Grid.Row="3"
+                    Style="{StaticResource ButtonOutline}"
+                    Command="{Binding SaveUserInfoCommand}"/>
+        </Grid>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="Fill"
+                           VerticalOptions="Center"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
