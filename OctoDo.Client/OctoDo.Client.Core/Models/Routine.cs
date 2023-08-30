@@ -1,5 +1,5 @@
 ﻿namespace OctoDo.Client.Core.Models;
-public class Routine
+public class Routine : BaseModel
 {
     public string? Name { get; set; }
     public string? Description { get; set; }

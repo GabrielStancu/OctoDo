@@ -1,16 +1,15 @@
-﻿using OctoDo.Client.Core.Interfaces;
-using OctoDo.Client.Core.Models;
+﻿using OctoDo.Client.Core.Models;
 using SQLite;
 
 namespace OctoDo.Client.Infrastructure.Repositories;
-public class GenericRepository<T> : IGenericRepository<T> where T : BaseModel, new()
+public abstract class GenericRepository<T> where T : BaseModel, new()
 {
     private readonly string _dbPath;
     protected SQLiteAsyncConnection? Connection;
 
     public string StatusMessage { get; set; }
 
-    public GenericRepository(string dbPath)
+    protected GenericRepository(string dbPath)
     {
         _dbPath = dbPath;
         StatusMessage = string.Empty;

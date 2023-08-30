@@ -2,15 +2,9 @@
 using OctoDo.Client.Core.Models;
 
 namespace OctoDo.Client.Infrastructure.Repositories;
-public class CompletionRepository : ICompletionRepository
+public class CompletionRepository : GenericRepository<Completion>, ICompletionRepository
 {
-    public Task CreateCompletionAsync(Completion completion)
+    public CompletionRepository(string dbPath) : base(dbPath)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteCompletionAsync(Completion completion)
-    {
-        throw new NotImplementedException();
     }
 }

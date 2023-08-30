@@ -2,20 +2,9 @@
 using OctoDo.Client.Core.Models;
 
 namespace OctoDo.Client.Infrastructure.Repositories;
-public class ActivityStatusRepository : IActivityStatusRepository
+public class ActivityStatusRepository : GenericRepository<ActivityStatus>, IActivityStatusRepository
 {
-    public Task ToggleActivityStatusAsync(Guid id)
+    public ActivityStatusRepository(string dbPath) : base(dbPath)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task CreateActivityStatusAsync(ActivityStatus activityStatus)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteActivityStatusAsync(Guid id)
-    {
-        throw new NotImplementedException();
     }
 }

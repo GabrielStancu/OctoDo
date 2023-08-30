@@ -2,26 +2,10 @@
 using OctoDo.Client.Core.Models;
 
 namespace OctoDo.Client.Infrastructure.Repositories;
-public class ActivityRepository : IActivityRepository
+public class ActivityRepository : GenericRepository<Activity>, IActivityRepository
 {
-    public Task<Activity> GetActivityAsync(Guid id)
+    public ActivityRepository(string dbPath) : base(dbPath)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task CreateActivityAsync(Activity activity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task ModifyActivityAsync(Activity activity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteActivityAsync(Guid id)
-    {
-        throw new NotImplementedException();
     }
 
     public Task<IEnumerable<Activity>> GetRoutineActivitiesAsync(Guid routineId)

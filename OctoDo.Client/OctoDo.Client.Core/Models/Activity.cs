@@ -1,6 +1,6 @@
 ﻿namespace OctoDo.Client.Core.Models;
 
-public class Activity
+public class Activity : BaseModel
 {
     public string? Title { get; set; }
     public string? Description { get; set; }
