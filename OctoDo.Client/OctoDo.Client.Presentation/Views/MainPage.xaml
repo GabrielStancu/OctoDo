@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OctoDo.Client.Presentation.Views.MainPage">
-
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
@@ -37,5 +39,4 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

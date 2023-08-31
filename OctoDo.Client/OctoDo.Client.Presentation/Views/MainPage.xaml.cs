@@ -20,5 +20,10 @@ public partial class MainPage : ContentPage
 
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
+    }
 }
 
