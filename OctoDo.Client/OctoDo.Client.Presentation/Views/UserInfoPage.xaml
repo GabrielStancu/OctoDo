@@ -5,33 +5,30 @@
              x:Class="OctoDo.Client.Presentation.Views.UserInfoPage"
              x:DataType="viewModel:UserInfoViewModel"
              Title="{Binding Title}">
-    <Grid RowDefinitions="*, 1.5*"
-          RowSpacing="30"
-          Margin="0, 50, 0, 0">
-        <Image Source="logo.png"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               WidthRequest="350"
-               HeightRequest="350"/>
-
-        <Grid RowDefinitions="*, *, *, *" 
-              Grid.Row="1"
-              Margin="80, 0">
+    <VerticalStackLayout>
+        <VerticalStackLayout Margin="{OnPlatform Android=40}">
+            <Image Source="logo.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   WidthRequest="300"
+                   HeightRequest="300"/>
             <Label Text="Let's get started!"
                    Style="{StaticResource LargeLabel}"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
-                   Grid.Row="0"
-                   FontSize="30"
-                   Margin="0, 0, 0, 30"/>
+                   FontSize="30"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Margin="80, 15">
             <Entry Placeholder="How should we call you?"
                    Text="{Binding UserName}"
                    VerticalOptions="Center"
-                   Grid.Row="1"
                    WidthRequest="230"
                    Style="{StaticResource MediumEntry}"
-                   HorizontalTextAlignment="Center"/>
-            <VerticalStackLayout Grid.Row="2">
+                   HorizontalTextAlignment="Center"
+                   Margin="0, 20"
+                   />
+            <VerticalStackLayout>
                 <Label Style="{StaticResource MediumLabel}"
                        Text="When should your day start?"
                        HorizontalTextAlignment="Center"
@@ -41,20 +38,15 @@
                             HorizontalOptions="Center"
                             Time="{Binding DailyScheduleReset}"
                             Format="HH:mm"
-                            Style="{StaticResource LargeTimePicker}"/>
+                            Style="{StaticResource LargeTimePicker}"
+                            Margin="0, 15"/>
             </VerticalStackLayout>
             
             <Button Text="Confirm"
-                    Grid.Row="3"
                     Style="{StaticResource ButtonOutline}"
-                    Command="{Binding SaveUserInfoCommand}"/>
-        </Grid>
-
-        <ActivityIndicator IsVisible="{Binding IsBusy}"
-                           IsRunning="{Binding IsBusy}"
-                           HorizontalOptions="Fill"
-                           VerticalOptions="Center"
-                           Grid.RowSpan="2"
-                           Grid.ColumnSpan="2"/>
-    </Grid>
+                    Command="{Binding SaveUserInfoCommand}"
+                    WidthRequest="200"
+                    Margin="0, 20"/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>
