@@ -8,7 +8,6 @@ public partial class UserInfoViewModel : BaseViewModel
     public UserInfoViewModel()
     {
         Title = "OctoDo";
-        CheckUser();
     }
 
     [ObservableProperty] 
@@ -34,18 +33,5 @@ public partial class UserInfoViewModel : BaseViewModel
         Preferences.Default.Set("dailyScheduleReset", $"{DailyScheduleReset.Hours}:{DailyScheduleReset.Minutes}");
 
         await Shell.Current.GoToAsync($"{nameof(MainPage)}", true);
-    }
-
-    private static void CheckUser()
-    {
-        var username = Preferences.Get("username", string.Empty);
-
-        if (!string.IsNullOrEmpty(username))
-        {
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                Shell.Current.GoToAsync($"{nameof(MainPage)}");
-            });
-        }
     }
 }
